@@ -6,4 +6,3 @@
 2. Dataset of country names,
     - search .
 3. Dataset of country fa-icons,
-

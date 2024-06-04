@@ -1,16 +1,60 @@
 # Overview of project: Nations
 
-```shell
+### 02 June 2024
+Progress:
+1. SOC (1.1) not working
 
-django-admin startproject nations
-cd nations
+
+### 01 June 2024
+Progress:
+1. Collected names dataset,
+2. 'SOC(1)' done for User class,
+3. 'SOC(1)' done for all apps installed
+    till this,
+4. AZFlag and Nations,
+ 
+
+```shell
+# (sequence of commands (SOC) 1 BEGIN)
 python3 manage.py migrate
-django-admin manage.py makemigrations
-django-admin startapp autenticator
+python3 manage.py makemigrations
+# (POC 1 END)
+```
+
+```shell
+# (SOC 2)
+django-admin makeproject project_name
+"""
+run SOC(1)
+"""
+django-admin startapp app_name
+```
+
+## Commands:
+```shell
+# Before authenticator (1)
+#
+django-admin startapp AZNation
+#
+"""
+#
+# Run iterM1: POC1
+#
+"""
 
 ```
 
-1. ```User``` model
 
-python3 manage.py migrate
+### 31 May 2024
+
+```shell
+django-admin startproject nations
+cd nations
+"""
+# Run I1: POC1
+#
+#
+"""
+django-admin startapp authenticator
+```
 

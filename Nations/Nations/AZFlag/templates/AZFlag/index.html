@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<title>AZFlag</title>
+<head>
+    <script></script>
+</head>
+<body>
+    <section>
+        <h1>
+            Nations
+        </h1>
+        <div>
+            {% for nations in data %}
+                {% for nation in data %}
+                    <li>{{ nation }}</li>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </section>
+</body>
+<script>
+
+</script>
+<footer>
+
+</footer>
