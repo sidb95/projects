@@ -2,9 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 from .models import Person
 import random
-from django.http import HttpResponseRedirect
-from django.urls import reverse, path
-import AZFlag
+
 
 class Authenticator():
 
