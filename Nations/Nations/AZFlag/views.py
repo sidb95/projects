@@ -11,6 +11,7 @@ def index(request):
   nations = []
   line = f.readline()
   while line != "":
+    flag = Flag(line)
     nations.append(line) 
     line = f.readline()
   f.close()
