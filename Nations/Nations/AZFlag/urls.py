@@ -6,5 +6,5 @@ from .  import views
 app_name = 'AZFlag'
 
 urlpatterns = [
-    path('AZFlag/index.html', views.index, name='index')
+    path('AZFlag/index.html',views.index, name="index")
 ]

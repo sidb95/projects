@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User, Flag
+from .models import Flag
 from django.http import HttpResponse
 
 """
@@ -10,9 +10,12 @@ def index(request):
   f = open('media/Nations/files/nations.txt', 'r')
   nations = []
   line = f.readline()
+  count = 0
   while line != "":
-    flag = Flag(line)
-    nations.append(line) 
+    count += 1
+    flag = Flag(countryName=line, imgURL=("imgURL" + str(count) + ".png"))
+    flag.save() 
+    nations.append(line)
     line = f.readline()
   f.close()
   if (request.method == "POST"):

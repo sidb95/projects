@@ -7,12 +7,14 @@ Progress:
 2. uml usecase diagram,
 3. made application Authenticator,
 4. install djangorestframework,
-5. 
+5. implement Authenticator
+6. Iteration 1 achieved.
 
 
 ```shell
 python3 -m django startapp Authenticator
-python -m pip install djangorestframework
+python3 -m pip install djangorestframework
+python3 -m pip install -U Django
 ```
 
 ### 02 June 2024
