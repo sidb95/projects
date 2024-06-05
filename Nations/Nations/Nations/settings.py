@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'AZFlag',
-    'authenticator',
+    'Authenticator',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',

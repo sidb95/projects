@@ -6,10 +6,13 @@ Progress:
 1. flow diagram,
 2. uml usecase diagram,
 3. made application Authenticator,
+4. install djangorestframework,
+5. 
 
 
 ```shell
 python3 -m django startapp Authenticator
+python -m pip install djangorestframework
 ```
 
 ### 02 June 2024

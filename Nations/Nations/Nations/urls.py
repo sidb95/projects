@@ -29,6 +29,6 @@ urlpatterns = [
 
 # screen/index
 urlpatterns += [
-    path('', include('AZFlag.urls'))
+    path('AZFlag/index.html', include('AZFlag.urls')),
+    path('', include('Authenticator.urls'))
 ]
-
