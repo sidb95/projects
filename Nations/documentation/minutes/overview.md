@@ -1,5 +1,17 @@
 # Overview of project: Nations
 
+### 05 June 2024
+
+Progress:
+1. flow diagram,
+2. uml usecase diagram,
+3. made application Authenticator,
+
+
+```shell
+python3 -m django startapp Authenticator
+```
+
 ### 02 June 2024
 Progress:
 1. SOC (1.1) not working
