@@ -1,5 +1,11 @@
 # Overview of project: Nations
 
+### 11 June 2024
+
+1. ITER 2 start,
+2. Fixed nations display,
+3. less throughput time now,
+
 ### 05 June 2024
 
 Progress:
