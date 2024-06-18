@@ -8,7 +8,7 @@ screen page (main)
 """
 # function index
 def index(request):
-  nations = []
+  nations = {}
   urls = []
   if (len(Flag.objects.all()) < 1):
     f = open('AZFlag/static/AZFlag/files/nations_sorted.txt', 'r')
@@ -32,11 +32,9 @@ def index(request):
     f.close()
   else:
     flags = Flag.objects.all()
-    print(len(flags))
     for flag in flags:
-      nations.append(flag.countryName)
-      urls.append(flag.imgURL)
+      nations[flag.countryName] = flag.imgURL
   if (request.method == "POST"):
     pass
   else:
-    return render(request, "AZFlag/index.html", {'nations': nations, 'urls' : urls})
+    return render(request, "AZFlag/index.html", {'nations': nations})
