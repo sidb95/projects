@@ -26,7 +26,7 @@ def index(request):
         print("list Index Out of range",)
       flag = Flag(countryName=nation, imgURL=(code + ".png"))
       flag.save() 
-      nations.append(nation)
+      nations[flag.countryName] = flag.imgURL
       urls.append(code + '.png')
       line = f.readline()
     f.close()
