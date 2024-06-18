@@ -9,22 +9,34 @@ screen page (main)
 # function index
 def index(request):
   nations = []
+  urls = []
   if (len(Flag.objects.all()) < 1):
-    f = open('media/Nations/files/nations.txt', 'r')
+    f = open('AZFlag/static/AZFlag/files/nations_sorted.txt', 'r')
     line = f.readline()
     count = 0
     while line != "":
       count += 1
-      flag = Flag(countryName=line, imgURL=("imgURL" + str(count) + ".png"))
+      nation = ""
+      code = ""
+      try:
+        arr = line.split(' ')
+        nation = arr[0]
+        code = arr[1]
+      except IndexError as err:
+        print("list Index Out of range",)
+      flag = Flag(countryName=nation, imgURL=(code + ".png"))
       flag.save() 
-      nations.append(line)
+      nations.append(nation)
+      urls.append(code + '.png')
       line = f.readline()
     f.close()
   else:
     flags = Flag.objects.all()
+    print(len(flags))
     for flag in flags:
       nations.append(flag.countryName)
+      urls.append(flag.imgURL)
   if (request.method == "POST"):
     pass
   else:
-    return render(request, "AZFlag/index.html", {'data': nations})
+    return render(request, "AZFlag/index.html", {'nations': nations, 'urls' : urls})
