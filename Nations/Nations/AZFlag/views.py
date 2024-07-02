@@ -23,17 +23,30 @@ def index(request):
         nation = arr[0]
         code = arr[1]
       except IndexError as err:
-        print("list Index Out of range",)
-      flag = Flag(countryName=nation, imgURL=(code + ".png"))
+        print("list Index Out of range", err)
+      flag = Flag(countryName=nation, imgURL=(code + ".png"), anthemURL="")
       flag.save() 
       nations[flag.countryName] = flag.imgURL
       urls.append(code + '.png')
       line = f.readline()
     f.close()
+    f = open('AZFlag/static/AZFlag/files/national_anthems.txt')
+    line = f.readline()
+    while (line != ""):
+        try:
+            arr = line.split()
+            nation = arr[0]
+            anthemURL = arr[2]
+            flag = Flag.objects.get(countryName=nation)
+            flag.anthemURL = anthemURL
+            flag.save()
+            line = f.readline()
+        except IndexError as err:
+            print("list Index Out of range", err)
   else:
     flags = Flag.objects.all()
     for flag in flags:
-      nations[flag.countryName] = flag.imgURL
+      nations[flag.countryName] = {flag.imgURL: flag.anthemURL}
   if (request.method == "POST"):
     pass
   else:

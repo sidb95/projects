@@ -11,19 +11,23 @@
             Nations
         </h1>
         <table>
-            {% for key, value in nations.items %}
+            {% for key, values in nations.items %}
             <tr>
                 <td>
                     {{ key }}
                 </td>
+                {% for k, v in values.items %}
                 <td>
-                    <img src="../../static/AZFlag/flags/128x128/{{ value }}" >    
+                    <img src="../../static/AZFlag/flags/128x128/{{ k }}" >
+                <br>
+                    <b><a href="{{ v }}">{{ v }}</a></b>
                 </td>
+                {% endfor %}   
             </tr>
             {% endfor %}
         </table>
     </section>
-    <footer>
-
+    <footer style="text-align: center;">
+        © Nations
     </footer>
 </body>
