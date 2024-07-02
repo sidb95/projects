@@ -2,5 +2,4 @@
 
  Projects:
 
-1. Nations
-
+1. Nations: National flags and anthems.
